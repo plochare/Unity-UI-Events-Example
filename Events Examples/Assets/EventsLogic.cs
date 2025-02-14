@@ -29,8 +29,8 @@ public class EventsLogic : MonoBehaviour
     }
     void FixedUpdate(){
         // Update on the set frame rate
-        currentLocation.y += 0.001f ; // increment y value by 0.001
-        playerObj.transform.position = new Vector3(currentLocation.x, currentLocation.y, currentLocation.z);
+        currentLocation.y += 0.01f ; // increment y value by 0.001
+        playerObj.transform.position = new Vector3(currentLocation.x, currentLocation.y, scaleSlider.value);
     }
 
     // Create Public Functions to change or modify Properties
@@ -42,4 +42,7 @@ public class EventsLogic : MonoBehaviour
         playerRenderer.material = colorPalette[colorDropdown.value];
     }
 
+    public void SetPlayerPosition(){
+        playerObj.transform.position = new Vector3(currentLocation.x, currentLocation.y, scaleSlider.value);
+    }
 }
